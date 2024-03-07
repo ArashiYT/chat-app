@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.museomoderno {
+  font-family: "MuseoModerno", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.anta {
+  font-family: "Anta", sans-serif;
+}
+
+.anta.regular {
+  font-weight: 400;
+}
+
+body {
+  background: linear-gradient(#001b48, #018abe);
+  min-height: 100vh;
+}
+
+header {
+  justify-content: space-between;
+  padding: 30px 100px;
+  align-items: center;
+  position: absolute;
+  z-index: 10000;
+  display: flex;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+header .logo {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 2em;
+  color: #fff;
+}
+
+header ul {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+header ul li {
+  margin-left: 20px;
+}
+
+header ul li a {
+  border: 2px solid #fff;
+  transition: 0.2s linear;
+  border-radius: 15px;
+  padding: 12px 20px;
+  font-weight: bold;
+  color: #fff;
+  outline: none;
+}
+
+header ul li a:is(:focus-visible, :hover, :active) {
+  background: #fff;
+  color: #001b48;
+  cursor: pointer;
+}
+
+section {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 100px;
+  height: 100vh;
+  display: flex;
+  width: 100%;
+}
+
+section img {
+  position: absolute;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+section img#moon {
+  mix-blend-mode: screen;
+}
+
+#text {
+  white-space: nowrap;
+  position: absolute;
+  font-size: 7.5vw;
+  color: #fff;
+  z-index: 9;
+}
+
+section img#montains_front {
+  z-index: 10;
+}
+
+.btn {
+  text-transform: uppercase;
+  background-color: #fff;
+  display: inline-block;
+  border-radius: 40px;
+  translate: 0 100px;
+  font-weight: 700;
+  padding: 12px 35px;
+  color: #001b48;
+  font-size: 1.2em;
+  outline: none;
+}
+
+.btn:is(:hover, :focus-visible, :active) {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+/*# sourceMappingURL=index.css.map */

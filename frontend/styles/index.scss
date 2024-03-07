@@ -1,0 +1,108 @@
+@import "variables";
+@import "globals";
+@import "mixins";
+
+body {
+    background: linear-gradient($dark-blue, $nautical-color);
+    min-height: 100vh;
+}
+
+header {
+    justify-content: space-between;
+    padding: 30px 100px;
+    align-items: center;
+    position: absolute;
+    z-index: 10000;
+    display: flex;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+header .logo {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 2em;
+    color: $color;
+}
+
+header ul {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    border: 2px solid $color;
+    transition: .2s linear;
+    border-radius: 15px;
+    padding: 12px 20px;
+    font-weight: bold;
+    color: $color;
+    outline: none;
+}
+
+header ul li a:is(:focus-visible, :hover, :active) {
+    background: $color;
+    color: $dark-blue;
+    cursor: pointer;
+}
+
+section {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 100px;
+    height: 100vh;
+    display: flex;
+    width: 100%;
+}
+
+section img {
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+section img#moon {
+    mix-blend-mode: screen;
+}
+
+#text {
+    white-space: nowrap;
+    position: absolute;
+    font-size: 7.5vw;
+    color: $color;
+    z-index: 9;
+}
+
+section img#montains_front {
+    z-index: 10;
+}
+
+.btn {
+    text-transform: uppercase;
+    background-color: $color;
+    display: inline-block;
+    border-radius: 40px;
+    translate: 0 100px;
+    font-weight: 700;
+    padding: 12px 35px;
+    color: $dark-blue;
+    font-size: 1.2em;
+    outline: none;
+}
+
+.btn:is(:hover, :focus-visible, :active) {
+    border: 2px solid $color;
+    background: transparent;
+    color: $color;
+}
