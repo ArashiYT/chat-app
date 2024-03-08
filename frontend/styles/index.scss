@@ -3,106 +3,144 @@
 @import "mixins";
 
 body {
+    $background: #1c0522;
+    $color: #fff;
+
     background: linear-gradient($dark-blue, $nautical-color);
+    overflow-x: hidden;
     min-height: 100vh;
-}
 
-header {
-    justify-content: space-between;
-    padding: 30px 100px;
-    align-items: center;
-    position: absolute;
-    z-index: 10000;
-    display: flex;
-    width: 100%;
-    left: 0;
-    top: 0;
-}
+    header {
+        justify-content: space-between;
+        padding: 30px 100px;
+        align-items: center;
+        position: absolute;
+        z-index: 10000;
+        display: flex;
+        width: 100%;
+        left: 0;
+        top: 0;
 
-header .logo {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    font-size: 2em;
-    color: $color;
-}
+        .logo {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 2em;
+            color: $color;
+        }
 
-header ul {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
+        ul {
+            justify-content: center;
+            align-items: center;
+            display: flex;
 
-header ul li {
-    margin-left: 20px;
-}
+            li {
+                margin-left: 20px;
+                
+                a {
+                    border: 2px solid $color;
+                    transition: .2s linear;
+                    border-radius: 15px;
+                    padding: 12px 20px;
+                    font-weight: bold;
+                    color: $color;
+                    outline: none;
+                    
+                    &:is(:focus-visible, :hover, :active) {
+                        background: $color;
+                        color: $dark-blue;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
 
-header ul li a {
-    border: 2px solid $color;
-    transition: .2s linear;
-    border-radius: 15px;
-    padding: 12px 20px;
-    font-weight: bold;
-    color: $color;
-    outline: none;
-}
 
-header ul li a:is(:focus-visible, :hover, :active) {
-    background: $color;
-    color: $dark-blue;
-    cursor: pointer;
-}
+    section {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 100px;
+        height: 100vh;
+        display: flex;
+        width: 100%;
 
-section {
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 100px;
-    height: 100vh;
-    display: flex;
-    width: 100%;
-}
+        img {
+            position: absolute;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
 
-section img {
-    position: absolute;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-}
+            &#moon {
+                mix-blend-mode: screen;
+            }
 
-section img#moon {
-    mix-blend-mode: screen;
-}
+            &#mountains_front {
+                z-index: 10;
+            }
+        }
 
-#text {
-    white-space: nowrap;
-    position: absolute;
-    font-size: 7.5vw;
-    color: $color;
-    z-index: 9;
-}
+        &::before {
+            background: linear-gradient(to top, $background, transparent);
+            position: absolute;
+            height: 100px;
+            z-index: 1000;
+            width: 100%;
+            content: '';
+            bottom: 0;
+        }
+    }
 
-section img#montains_front {
-    z-index: 10;
-}
 
-.btn {
-    text-transform: uppercase;
-    background-color: $color;
-    display: inline-block;
-    border-radius: 40px;
-    translate: 0 100px;
-    font-weight: 700;
-    padding: 12px 35px;
-    color: $dark-blue;
-    font-size: 1.2em;
-    outline: none;
-}
+    #text {
+        white-space: nowrap;
+        position: absolute;
+        font-size: 7.5vw;
+        color: $color;
+        // right: -350px;
+        z-index: 11;
+    }
 
-.btn:is(:hover, :focus-visible, :active) {
-    border: 2px solid $color;
-    background: transparent;
-    color: $color;
+    .btn {
+        text-transform: uppercase;
+        background-color: $color;
+        display: inline-block;
+        border-radius: 40px;
+        translate: 0 100px;
+        font-weight: 700;
+        padding: 12px 35px;
+        color: $dark-blue;
+        font-size: 1.2em;
+        outline: none;
+        z-index: 11;
+
+        &:is(:hover, :focus-visible, :active) {
+            border: 2px solid $color;
+            background: transparent;
+            color: $color;
+        }
+    }
+
+    .sec {
+        background-color: $background;
+        position: relative;
+        min-height: 100vh;
+        padding: 100px;
+
+        h2 {
+            margin-bottom: 30px;
+            font-size: 3.5em;
+            color: $color;
+        }
+
+        p {
+            font-size: 1em;
+            color: $color;
+            text-align: justify;
+        }
+    }
 }

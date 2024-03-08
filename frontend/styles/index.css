@@ -1,44 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Anta&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap");
 * {
-  margin: 0;
-  padding: 0;
+  scroll-behavior: smooth;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-
-li {
+* li {
   list-style: none;
 }
-
-a {
+* a {
   text-decoration: none;
 }
-
-.museomoderno {
+* .museomoderno {
   font-family: "MuseoModerno", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
-
-.montserrat {
+* .montserrat {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
-
-.anta {
+* .anta {
   font-family: "Anta", sans-serif;
 }
-
-.anta.regular {
+* .anta.regular {
   font-weight: 400;
 }
 
 body {
   background: linear-gradient(#001b48, #018abe);
+  overflow-x: hidden;
   min-height: 100vh;
 }
-
-header {
+body header {
   justify-content: space-between;
   padding: 30px 100px;
   align-items: center;
@@ -49,26 +44,22 @@ header {
   left: 0;
   top: 0;
 }
-
-header .logo {
+body header .logo {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
   font-size: 2em;
   color: #fff;
 }
-
-header ul {
+body header ul {
   justify-content: center;
   align-items: center;
   display: flex;
 }
-
-header ul li {
+body header ul li {
   margin-left: 20px;
 }
-
-header ul li a {
+body header ul li a {
   border: 2px solid #fff;
   transition: 0.2s linear;
   border-radius: 15px;
@@ -77,24 +68,22 @@ header ul li a {
   color: #fff;
   outline: none;
 }
-
-header ul li a:is(:focus-visible, :hover, :active) {
+body header ul li a:is(:focus-visible, :hover, :active) {
   background: #fff;
   color: #001b48;
   cursor: pointer;
 }
-
-section {
+body section {
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
   padding: 100px;
   height: 100vh;
   display: flex;
   width: 100%;
 }
-
-section img {
+body section img {
   position: absolute;
   object-fit: cover;
   height: 100%;
@@ -102,24 +91,29 @@ section img {
   left: 0;
   top: 0;
 }
-
-section img#moon {
+body section img#moon {
   mix-blend-mode: screen;
 }
-
-#text {
+body section img#mountains_front {
+  z-index: 10;
+}
+body section::before {
+  background: linear-gradient(to top, #1c0522, transparent);
+  position: absolute;
+  height: 100px;
+  z-index: 1000;
+  width: 100%;
+  content: "";
+  bottom: 0;
+}
+body #text {
   white-space: nowrap;
   position: absolute;
   font-size: 7.5vw;
   color: #fff;
-  z-index: 9;
+  z-index: 11;
 }
-
-section img#montains_front {
-  z-index: 10;
-}
-
-.btn {
+body .btn {
   text-transform: uppercase;
   background-color: #fff;
   display: inline-block;
@@ -130,12 +124,28 @@ section img#montains_front {
   color: #001b48;
   font-size: 1.2em;
   outline: none;
+  z-index: 11;
 }
-
-.btn:is(:hover, :focus-visible, :active) {
+body .btn:is(:hover, :focus-visible, :active) {
   border: 2px solid #fff;
   background: transparent;
   color: #fff;
+}
+body .sec {
+  background-color: #1c0522;
+  position: relative;
+  min-height: 100vh;
+  padding: 100px;
+}
+body .sec h2 {
+  margin-bottom: 30px;
+  font-size: 3.5em;
+  color: #fff;
+}
+body .sec p {
+  font-size: 1em;
+  color: #fff;
+  text-align: justify;
 }
 
 /*# sourceMappingURL=index.css.map */
